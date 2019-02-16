@@ -362,7 +362,7 @@ module PLUTUS-CORE-TYPING-AUX
     rule #alphaEquiv(T1, T2) => false [owise]
 
     syntax Name ::= freshName(Int)    [freshGenerator, function, functional]
-    rule freshName(I:Int) => #parseToken("Name", "_" +String Int2String(I))
+    rule freshName(I:Int) => {#parseToken("Name", "_" +String Int2String(I))}:>Name
 
 endmodule
 ```
